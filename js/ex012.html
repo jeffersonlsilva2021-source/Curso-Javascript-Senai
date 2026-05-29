@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegar elementos</title>
+</head>
+<body>
+    <h1>NOVO TITULO</h1>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat modi quisquam aut dolores itaque tempore! Vitae corporis aperiam perferendis sunt! Non voluptate consequatur officia? Vero iure repudiandae in officiis autem.</p>
+
+    <p>TESTANDO NOVO PARAGRAFO</p>
+
+    <div id="container">
+        TESTES
+    </div>
+
+    <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+    </ul>
+
+    <p>Clique aqui para trocar a</p>
+
+    <script>
+        let elemento = window.document.getElementById("container")
+        console.log(elemento)
+
+        elemento.style.backgroundColor = "red"
+        elemento.style.color = "white"
+
+
+        let itensLista = window.document.getElementsByClassName('item')[0]
+        console.log(itensLista)
+
+        itensLista.style.cssText = "color: red"
+    </script>
+
+</body>
+</html>

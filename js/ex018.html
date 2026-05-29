@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f5f5;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: white;
+            padding: 24px 34px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(92, 182, 95, 0.5);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #5cb65f;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input:focus {
+            border-color: #2be432;
+            box-shadow: 0 0 5px rgba(92, 182, 95, 0.5);
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="formulario">
+        <h2> Login </h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+
+        // Usuário irá digitar o email e a senha
+        // Quando clicar em 'enviar' ou submeter o formulário
+        // Se o email e senha estiver correto -> Ir para página logada!
+        // Se não, mostrar um alert informando 'Dados incorretos'
+
+        const form = document.getElementById('formulario')
+
+        const emailCorreto = 'jefferson@gmail.com'
+        const senhaCorreta = '123456'
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+
+            const emailUsuario = document.getElementById('email').value
+            const senhaUsuario = document.getElementById('senha').value
+         
+            if(emailUsuario === emailCorreto && senhaUsuario === senhaCorreta ){
+                // Se tudo estiver correto
+                window.location.href = 'paginaLogada.html'
+            }else{
+                // Se email ou senha estiver incorreto!
+                alert("Dados incorretos!!")
+                form.reset()
+            }
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
